@@ -1,7 +1,7 @@
-// Requires cross-fetch to ensure fetch works in environments that do not natively support it.
+// Write your helper functions here!
+
 require('cross-fetch/polyfill');
 
-// Updates the mission target HTML with information about the destination planet.
 function addDestinationInfo(document, name, diameter, star, distance, moons, imageUrl) {
     document.getElementById("missionTarget").innerHTML = `
         <h2>Mission Destination</h2>
@@ -16,7 +16,8 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
     `;
 }
 
-// Validates user input to determine if it's a number, empty, or a string.
+// function to validate the input in the form
+
 function validateInput(testInput) {
     if (testInput === "") {
         return "Empty";
@@ -27,7 +28,8 @@ function validateInput(testInput) {
     }
 }
 
-// Handles form submission, updating the shuttle requirements and displaying alerts if necessary.
+// function to check the elements using validateInput and then list the results in the bottom box
+
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     let launchReady = true;
     list.style.visibility = "hidden";
@@ -68,10 +70,11 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     }
 
     list.style.visibility = "visible";
+
+
+// fetch the planets
+
 }
-
-
-// Fetches planet data from an external source.
 async function myFetch() {
     let planetsReturned;
 
@@ -81,7 +84,8 @@ async function myFetch() {
     return planetsReturned;
 }
 
-// Selects a random planet from the list of planets for the mission target.
+// random planet 
+
 function pickPlanet(planets) {
     return planets[Math.floor(Math.random() * planets.length)];
 }
